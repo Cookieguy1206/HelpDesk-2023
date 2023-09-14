@@ -133,7 +133,7 @@ public class ControladorRecibirEmail {
         ps.executeUpdate();
     }
 
-    public void Verificacion(Message mensaje, String Correo, String Sujeto, String Contenido) throws SQLException /*com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException*/ {
+    public void Verificacion(Message mensaje, String Correo, String Sujeto, String Contenido) throws SQLException, MessagingException /*com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException*/ {
         ConsultasProblema Problema = new ConsultasProblema();
         if (Problema.BuscaRepetido(mensaje) == 0) {
             System.out.println("idMensaje " + mensaje + " No existe: Agregando...");

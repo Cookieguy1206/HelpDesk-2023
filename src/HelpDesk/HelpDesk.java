@@ -9,7 +9,6 @@ import java.awt.event.*;
 import java.io.*;
 import java.sql.*;
 import java.util.logging.*;
-import javax.mail.*;
 import javax.swing.*;
 
 public class HelpDesk {
