@@ -1,0 +1,34 @@
+[1mdiff --git a/src/Modelo/ConsultasProblema.java b/src/Modelo/ConsultasProblema.java[m
+[1mindex 5005ef4..3c0ff6e 100644[m
+[1m--- a/src/Modelo/ConsultasProblema.java[m
+[1m+++ b/src/Modelo/ConsultasProblema.java[m
+[36m@@ -39,17 +39,17 @@[m [mpublic class ConsultasProblema {[m
+         }[m
+     }[m
+ [m
+[31m-    public void AgarrarId(ModeloProblema Modelo, AñadirProblema Vista) throws SQLException {[m
+[31m-        try {[m
+[31m-            int idPrioridad = Vista.JCPrioridad.getSelectedIndex();[m
+[31m-[m
+[31m-            ps = conexion.prepareStatement("SELECT Prioridad FROM Prioridad WHERE idPrioridad = " + idPrioridad);[m
+[31m-            rs = ps.executeQuery();[m
+[31m-[m
+[31m-            System.out.println(ps);[m
+[31m-[m
+[31m-        } catch (SQLException ex) {[m
+[31m-            System.out.println("Error" + ex);[m
+[31m-        }[m
+[32m+[m[32m    /*    public void AgarrarId(ModeloProblema Modelo, AñadirProblema Vista) throws SQLException {[m
+[32m+[m[32m    try {[m
+[32m+[m[32m    int idPrioridad = Vista.JCPrioridad.getSelectedIndex();[m
+[32m+[m[41m    [m
+[32m+[m[32m    ps = conexion.prepareStatement("SELECT Prioridad FROM Prioridad WHERE idPrioridad = " + idPrioridad);[m
+[32m+[m[32m    rs = ps.executeQuery();[m
+[32m+[m[41m    [m
+[32m+[m[32m    System.out.println(ps);[m
+[32m+[m[41m    [m
+[32m+[m[32m    } catch (SQLException ex) {[m
+[32m+[m[32m    System.out.println("Error" + ex);[m
+     }[m
+[32m+[m[32m    }*/[m
+ }[m

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProcesos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c4142a1-f38f-4ff3-8ff4-52a06dff182d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tablaproblema.`idProblema` AS tablaproblema_idProblema,
+     tablaproblema.`CorreoPersona` AS tablaproblema_CorreoPersona,
+     tablaproblema.`NombreProb` AS tablaproblema_NombreProb,
+     tablaproblema.`DetalleProb` AS tablaproblema_DetalleProb,
+     tablaproblema.`FechaCreacion` AS tablaproblema_FechaCreacion,
+     tablaproblema.`AreaProb` AS tablaproblema_AreaProb,
+     tablaproblema.`Estado` AS tablaproblema_Estado,
+     tablaproblema.`Solucion` AS tablaproblema_Solucion
+FROM
+     `tablaproblema` tablaproblema
+WHERE estado = "En proceso"]]>
+	</queryString>
+	<field name="tablaproblema_idProblema" class="java.lang.Integer"/>
+	<field name="tablaproblema_CorreoPersona" class="java.lang.String"/>
+	<field name="tablaproblema_NombreProb" class="java.lang.String"/>
+	<field name="tablaproblema_DetalleProb" class="java.lang.String"/>
+	<field name="tablaproblema_FechaCreacion" class="java.sql.Timestamp"/>
+	<field name="tablaproblema_AreaProb" class="java.lang.String"/>
+	<field name="tablaproblema_Estado" class="java.lang.String"/>
+	<field name="tablaproblema_Solucion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="196" y="0" width="201" height="46" uuid="1f77ecdf-79d2-45c6-a425-aede513c48a9"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[REPORTES]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="272" y="46" width="100" height="20" uuid="9ad6a2d1-66bd-409a-8243-e388ad124bf2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="34" height="20" uuid="7dbb1766-6ff9-401a-b691-024508754b0e"/>
+				<text><![CDATA[Ticket]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="0" width="100" height="20" uuid="9a33788d-d0d0-44f0-b7bf-baa41286e086"/>
+				<text><![CDATA[Persona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="0" width="79" height="20" uuid="29603a61-8551-4547-b81b-a844cb719925"/>
+				<text><![CDATA[Problema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="137" height="20" uuid="7e1ae1cf-8c11-4d6e-b093-e71fd4317b66"/>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="60" height="20" uuid="f5b0d5eb-4d03-47f2-adf8-b8f4e4fbdcd1"/>
+				<text><![CDATA[Area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="0" width="75" height="20" uuid="5f530366-ec02-4a29-a790-33fca52eeb46"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="34" height="42" uuid="1cf98228-5797-4441-8b91-10920dc34e7e"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_idProblema}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="0" width="100" height="20" uuid="02ec335c-b1fc-4801-92e8-f96451e5e045"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_CorreoPersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="0" width="80" height="42" uuid="4cb33a45-e2d3-41cd-82d0-dd0d5cf078bc"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_NombreProb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="137" height="42" uuid="92804663-403f-48c3-863e-12a83db7f69b"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_DetalleProb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="60" height="20" uuid="1d8e29ea-44d0-48c2-a0b2-18a791e718e9"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_AreaProb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="75" height="20" uuid="0cef6eea-be21-4ad1-99a1-42cdab9966bd"/>
+				<textFieldExpression><![CDATA[$F{tablaproblema_Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="212" y="34" width="80" height="20" uuid="54464663-a912-4641-8a37-9c92ba0212f7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="292" y="34" width="40" height="20" uuid="666e92da-ec72-4795-ad86-3d5b5989f4b8"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
